@@ -1,3 +1,5 @@
+# Main module to initialize and run the Alien Invasion game using Pygame.
+
 import sys
 
 import pygame

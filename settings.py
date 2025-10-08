@@ -1,3 +1,4 @@
+# Contains configuration settings for the Alien Invasion game.
 
 class Settings:
     """A class to store all settings for Alien Invasion."""

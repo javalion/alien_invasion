@@ -1,3 +1,5 @@
+# Defines the Ship class for managing the player's ship in Alien Invasion.
+
 import pygame
 
 class Ship:
