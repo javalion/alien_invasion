@@ -32,12 +32,7 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self.bullets.update()
-            # Clean up bullets off screen
-            for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
-                    self.bullets.remove(bullet)
-            print(len(self.bullets))
+            self._update_bullets()
             self._update_screen()
             self.clock.tick(60)
 
@@ -51,6 +46,13 @@ class AlienInvasion:
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
 
+    def _update_bullets(self):
+        self.bullets.update()
+        # Clean up bullets off screen
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
+                
     def _update_screen(self):
         """Redraw the screen during each pass through the loop."""
         self.screen.fill(self.settings.bg_color)
